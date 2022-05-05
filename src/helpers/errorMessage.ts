@@ -6,3 +6,17 @@ export const deepEqualCompare = <Arg>(
 };
 
 deepEqualCompare("b", "hi");
+
+interface Letters {
+	a: number;
+	b: string;
+	c: {
+		name: string;
+	};
+}
+
+type LetterAsUnion = keyof Letters;
+const letter: LetterAsUnion = "a";
+
+type LetterValues = Letters[keyof Letters];
+const value: LetterValues = "c";
